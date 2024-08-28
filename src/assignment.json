@@ -1,0 +1,137 @@
+{
+    "info": {
+        "name": "TestBuddy APIs",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Verify OTP",
+            "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"mobile\": \"+919098989999\",\n    \"otp\": \"8899\"\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "https://api.testbuddy.live/v1/auth/verifyotp",
+                    "protocol": "https",
+                    "host": [
+                        "api",
+                        "testbuddy",
+                        "live"
+                    ],
+                    "path": [
+                        "v1",
+                        "auth",
+                        "verifyotp"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Get Razorpay Key",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "{{token}}",
+                        "type": "text"
+                    }
+                ],
+                "url": {
+                    "raw": "https://api.testbuddy.live/v1/payment/key",
+                    "protocol": "https",
+                    "host": [
+                        "api",
+                        "testbuddy",
+                        "live"
+                    ],
+                    "path": [
+                        "v1",
+                        "payment",
+                        "key"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Create Order",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "{{token}}",
+                        "type": "text"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"packageId\": \"6613d6fbbf1afca9aa1b519e\",\n    \"pricingId\": \"662caa2d50bf43b5cef75232\",\n    \"finalAmount\": \"441\",\n    \"couponCode\": \"NEET25\"\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "https://api.testbuddy.live/v1/order/create",
+                    "protocol": "https",
+                    "host": [
+                        "api",
+                        "testbuddy",
+                        "live"
+                    ],
+                    "path": [
+                        "v1",
+                        "order",
+                        "create"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Verify Order",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "{{token}}",
+                        "type": "text"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"transactionId\": \"6625331b1edee8c615cb1fc4\",\n    \"razorpayPaymentId\": \"gdcxfwjvdb\",\n    \"razorpaySignature\": \"dgfyjw2gvbdyhb2iudbibufdi\"\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "https://api.testbuddy.live/v1/order/verify",
+                    "protocol": "https",
+                    "host": [
+                        "api",
+                        "testbuddy",
+                        "live"
+                    ],
+                    "path": [
+                        "v1",
+                        "order",
+                        "verify"
+                    ]
+                }
+            }
+        }
+    ]
+  }
